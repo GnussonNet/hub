@@ -103,20 +103,22 @@ const Navbar = () => {
       )}
     >
       <div className="container flex w-full flex-wrap items-center">
-        <Link
-          ref={navLogoRef}
-          href={pathname.startsWith("/dashboard") ? "/dashboard" : "/"}
-          className={cn(
-            "order-1 mr-6 flex flex-shrink-0 items-center space-x-2 rounded-md ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-            HEADER_HEIGHT
-          )}
-        >
-          <LucideIcon name="Globe" className="h-6 w-6 flex-shrink-0" />
-          <span className="inline-block font-bold">
-            {siteConfig.name}{" "}
-            <span className=" text-sm font-thin xs:inline">by GnussonNet</span>
-          </span>
-        </Link>
+        <div className={cn("order-1 flex items-center", HEADER_HEIGHT)}>
+          <Button asChild size={"sm"} variant={"link"} className="mr-6 p-0">
+            <Link
+              className="flex items-center space-x-1"
+              href={pathname.startsWith("/dashboard") ? "/dashboard" : "/"}
+            >
+              <LucideIcon name="Globe" className="h-6 w-6 flex-shrink-0" />
+              <span className="inline-block font-bold">
+                {siteConfig.name}{" "}
+                <span className=" text-sm font-thin xs:inline">
+                  by GnussonNet
+                </span>
+              </span>
+            </Link>
+          </Button>
+        </div>
         <div
           ref={navItemsRef}
           className={cn(
