@@ -20,32 +20,33 @@ const Navbar = () => {
   const [navItemsWrapped, setNavItemsWrapped] = useState({
     links: false,
     buttons: false,
+    menuButton: false,
   });
 
   const navLogoRef = useRef<HTMLAnchorElement>(null);
-  const navMenuButtonRef = useRef<HTMLButtonElement>(null);
-  const navPlaceholderRef = useRef<HTMLDivElement>(null);
+  const navMenuButtonRef = useRef<HTMLDivElement>(null);
   const navItemsRef = useRef<HTMLDivElement>(null);
   const navButtonsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    console.log(navItemsWrapped);
+  }, [navItemsWrapped]);
+
+  useEffect(() => {
+    let previousWidth = window.innerWidth;
+
     const handleResize = () => {
-      setMenuOpen(false);
+      const currentWidth = window.innerWidth;
+      if (currentWidth !== previousWidth) {
+        setMenuOpen(false);
+      }
 
       const navLogo = navLogoRef.current;
       const navMenuButton = navMenuButtonRef.current;
-      const navPlaceholder = navPlaceholderRef.current;
       const navItems = navItemsRef.current;
       const navButtons = navButtonsRef.current;
 
-      if (
-        !navLogo ||
-        !navMenuButton ||
-        !navPlaceholder ||
-        !navItems ||
-        !navButtons
-      )
-        return;
+      if (!navLogo || !navMenuButton || !navItems || !navButtons) return;
 
       const linksWrapped =
         navLogo.getBoundingClientRect().top <
@@ -53,17 +54,30 @@ const Navbar = () => {
       const buttonsWrapped =
         navItems.getBoundingClientRect().top <
         navButtons.getBoundingClientRect().top;
+      const menuButtonWrapped =
+        navItems.getBoundingClientRect().top <
+        navMenuButton.getBoundingClientRect().top;
 
       if (linksWrapped) {
-        setNavItemsWrapped((prev) => ({ ...prev, links: true }));
-        setNavItemsWrapped((prev) => ({ ...prev, buttons: true }));
+        setNavItemsWrapped({ links: true, buttons: true, menuButton: true });
+      } else if (menuButtonWrapped) {
+        setNavItemsWrapped((prev) => ({
+          ...prev,
+          buttons: true,
+          menuButton: true,
+        }));
+        setNavItemsWrapped((prev) => ({ ...prev, links: false }));
       } else if (buttonsWrapped) {
         setNavItemsWrapped((prev) => ({ ...prev, buttons: true }));
-        setNavItemsWrapped((prev) => ({ ...prev, links: false }));
+        setNavItemsWrapped((prev) => ({
+          ...prev,
+          links: false,
+          menuButton: false,
+        }));
       } else {
-        setNavItemsWrapped((prev) => ({ ...prev, links: false }));
-        setNavItemsWrapped((prev) => ({ ...prev, buttons: false }));
+        setNavItemsWrapped({ links: false, buttons: false, menuButton: false });
       }
+      previousWidth = currentWidth;
     };
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -85,7 +99,7 @@ const Navbar = () => {
           ref={navLogoRef}
           href={pathname.startsWith("/dashboard") ? "/dashboard" : "/"}
           className={cn(
-            "mr-6 flex flex-shrink-0 items-center space-x-2 rounded-md ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+            "order-1 mr-6 flex flex-shrink-0 items-center space-x-2 rounded-md ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
             HEADER_HEIGHT
           )}
         >
@@ -95,22 +109,13 @@ const Navbar = () => {
             <span className=" text-sm font-thin xs:inline">by GnussonNet</span>
           </span>
         </Link>
-        <Button
-          ref={navMenuButtonRef}
-          onClick={() => setMenuOpen(!menuOpen)}
-          size={"sm"}
-          variant={"outline"}
-          className={cn("ml-auto", navItemsWrapped.links ? "block" : "hidden")}
-        >
-          <LucideIcon name="Menu" className="h-4 w-4" />
-        </Button>
-        <div ref={navPlaceholderRef}></div>
         <div
           ref={navItemsRef}
           className={cn(
             "relative flex items-center",
-            menuOpen ? "mb-4 w-full" : "flex-1",
-            !menuOpen && HEADER_HEIGHT
+            menuOpen ? "w-full" : "flex-1",
+            !menuOpen && HEADER_HEIGHT,
+            navItemsWrapped.menuButton ? "order-5" : "order-3"
           )}
         >
           <NavItems
@@ -120,12 +125,33 @@ const Navbar = () => {
             }
           />
         </div>
-        <Separator className={cn(menuOpen ? "block" : "hidden")} />
+        <Separator
+          className={cn("order-5", menuOpen ? "my-4 block" : "hidden")}
+        />
+        <div
+          ref={navMenuButtonRef}
+          className={cn(
+            "ml-auto items-center",
+            navItemsWrapped.buttons ? "flex" : "hidden",
+            navItemsWrapped.menuButton ? "order-3" : "order-5",
+            menuOpen ? "order-2" : "order-4",
+            HEADER_HEIGHT
+          )}
+        >
+          <Button
+            onClick={() => setMenuOpen(!menuOpen)}
+            size={"sm"}
+            variant={"outline"}
+          >
+            <LucideIcon name="Menu" className="h-4 w-4" />
+          </Button>
+        </div>
         <div
           ref={navButtonsRef}
           className={cn(
-            "relative flex items-center space-x-4",
-            menuOpen ? "my-4 flex-1 justify-center" : "justify-end"
+            "relative order-5 flex items-center space-x-4",
+            menuOpen ? "mb-4 flex-1 justify-center" : "justify-end",
+            !menuOpen && HEADER_HEIGHT
           )}
         >
           <nav className={cn("flex gap-2", menuOpen ? "w-full flex-col" : "")}>
