@@ -8,23 +8,23 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 interface MainNavProps {
-  items?: NavItem[];
-  wrapped?: boolean;
+  items: NavItem[];
+  menuOpen: boolean;
 }
 
-export function NavItems({ items, wrapped }: MainNavProps) {
+export function NavItems({ items, menuOpen }: MainNavProps) {
   const pathname = usePathname();
   return items?.length ? (
-    <nav className={cn("flex gap-2")}>
+    <nav className={cn("flex gap-2", menuOpen ? "w-full flex-col" : "")}>
       {items?.map(
         (item, index) =>
           item.href && (
             <Button
               key={index}
-              size={"sm"}
+              size={menuOpen ? "lg" : "sm"}
               variant={"ghost"}
               className={cn(
-                "text-muted-foreground hover:text-primary hover:no-underline",
+                "flex justify-start text-muted-foreground hover:text-primary hover:no-underline",
                 pathname === item.href && "text-primary"
               )}
               asChild
