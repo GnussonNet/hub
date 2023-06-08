@@ -51,31 +51,28 @@ const Navbar = () => {
       const linksWrapped =
         navLogo.getBoundingClientRect().top <
         navItems.getBoundingClientRect().top;
-      const buttonsWrapped =
-        navItems.getBoundingClientRect().top <
-        navButtons.getBoundingClientRect().top;
       const menuButtonWrapped =
-        navItems.getBoundingClientRect().top <
+        navLogo.getBoundingClientRect().top <
         navMenuButton.getBoundingClientRect().top;
+      const buttonsWrapped =
+        navLogo.getBoundingClientRect().top <
+        navButtons.getBoundingClientRect().top;
+
+      console.log(
+        navLogo.getBoundingClientRect().top,
+        navMenuButton.getBoundingClientRect().top,
+        navLogo.getBoundingClientRect().top <
+          navMenuButton.getBoundingClientRect().top
+      );
 
       if (linksWrapped) {
-        setNavItemsWrapped({ links: true, buttons: true, menuButton: true });
+        setNavItemsWrapped({ links: true, menuButton: true, buttons: true });
       } else if (menuButtonWrapped) {
-        setNavItemsWrapped((prev) => ({
-          ...prev,
-          buttons: true,
-          menuButton: true,
-        }));
-        setNavItemsWrapped((prev) => ({ ...prev, links: false }));
+        setNavItemsWrapped({ links: false, menuButton: true, buttons: true });
       } else if (buttonsWrapped) {
-        setNavItemsWrapped((prev) => ({ ...prev, buttons: true }));
-        setNavItemsWrapped((prev) => ({
-          ...prev,
-          links: false,
-          menuButton: false,
-        }));
+        setNavItemsWrapped({ links: false, menuButton: false, buttons: true });
       } else {
-        setNavItemsWrapped({ links: false, buttons: false, menuButton: false });
+        setNavItemsWrapped({ links: false, menuButton: false, buttons: false });
       }
       previousWidth = currentWidth;
     };
@@ -133,8 +130,12 @@ const Navbar = () => {
           className={cn(
             "ml-auto items-center",
             navItemsWrapped.buttons ? "flex" : "hidden",
-            navItemsWrapped.menuButton ? "order-3" : "order-5",
-            menuOpen ? "order-2" : "order-4",
+
+            menuOpen
+              ? "order-2"
+              : navItemsWrapped.menuButton
+              ? "order-3"
+              : "order-5",
             HEADER_HEIGHT
           )}
         >
