@@ -139,13 +139,23 @@ const Navbar = () => {
             HEADER_HEIGHT
           )}
         >
-          <Button
-            onClick={() => setMenuOpen(!menuOpen)}
-            size={"sm"}
-            variant={"outline"}
-          >
-            <LucideIcon name="Menu" className="h-4 w-4" />
-          </Button>
+          {menuOpen ? (
+            <Button
+              onClick={() => setMenuOpen(false)}
+              size={"sm"}
+              variant={"outline"}
+            >
+              <LucideIcon name="X" className="h-4 w-4" />
+            </Button>
+          ) : (
+            <Button
+              onClick={() => setMenuOpen(true)}
+              size={"sm"}
+              variant={"outline"}
+            >
+              <LucideIcon name="Menu" className="h-4 w-4" />
+            </Button>
+          )}
         </div>
         <div
           ref={navButtonsRef}
