@@ -29,10 +29,6 @@ const Navbar = () => {
   const navButtonsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    console.log(navItemsWrapped);
-  }, [navItemsWrapped]);
-
-  useEffect(() => {
     let previousWidth = window.innerWidth;
 
     const handleResize = () => {
@@ -57,13 +53,6 @@ const Navbar = () => {
       const buttonsWrapped =
         navLogo.getBoundingClientRect().top <
         navButtons.getBoundingClientRect().top;
-
-      console.log(
-        navLogo.getBoundingClientRect().top,
-        navMenuButton.getBoundingClientRect().top,
-        navLogo.getBoundingClientRect().top <
-          navMenuButton.getBoundingClientRect().top
-      );
 
       if (linksWrapped) {
         setNavItemsWrapped({ links: true, menuButton: true, buttons: true });
