@@ -15,29 +15,9 @@ export const siteConfig = {
       icon: "Home" as IconKey,
     },
     {
-      title: "Test",
-      href: "/",
-      icon: "FlaskConical" as IconKey,
-    },
-    {
-      title: "Test2",
-      href: "/",
-      icon: "FlaskConical" as IconKey,
-    },
-    {
-      title: "Test3",
-      href: "/",
-      icon: "FlaskConical" as IconKey,
-    },
-    {
-      title: "Test3",
-      href: "/",
-      icon: "FlaskConical" as IconKey,
-    },
-    {
-      title: "Test3",
-      href: "/",
-      icon: "FlaskConical" as IconKey,
+      title: "About",
+      href: "/about",
+      icon: "HeartHandshake" as IconKey,
     },
   ],
   dashboardNav: [
