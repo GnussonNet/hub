@@ -23,6 +23,7 @@ const Navbar = () => {
     menuButton: false,
   });
 
+  const navRef = useRef<HTMLHeadElement>(null);
   const navLogoRef = useRef<HTMLAnchorElement>(null);
   const navMenuButtonRef = useRef<HTMLDivElement>(null);
   const navItemsRef = useRef<HTMLDivElement>(null);
@@ -73,8 +74,29 @@ const Navbar = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        menuOpen &&
+        navMenuButtonRef.current &&
+        !navMenuButtonRef.current.contains(event.target as Node) &&
+        navRef.current &&
+        !navRef.current.contains(event.target as Node)
+      ) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuOpen]);
+
   return (
     <header
+      ref={navRef}
       className={cn(
         "sticky top-0 z-40 w-full overflow-hidden border-b bg-background",
         menuOpen ? "" : HEADER_HEIGHT
