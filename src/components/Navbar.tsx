@@ -24,7 +24,7 @@ const Navbar = () => {
   });
 
   const navRef = useRef<HTMLHeadElement>(null);
-  const navLogoRef = useRef<HTMLAnchorElement>(null);
+  const navLogoRef = useRef<HTMLDivElement>(null);
   const navMenuButtonRef = useRef<HTMLDivElement>(null);
   const navItemsRef = useRef<HTMLDivElement>(null);
   const navButtonsRef = useRef<HTMLDivElement>(null);
@@ -103,7 +103,10 @@ const Navbar = () => {
       )}
     >
       <div className="container flex w-full flex-wrap items-center">
-        <div className={cn("order-1 flex items-center", HEADER_HEIGHT)}>
+        <div
+          ref={navLogoRef}
+          className={cn("order-1 flex items-center", HEADER_HEIGHT)}
+        >
           <Button asChild size={"sm"} variant={"link"} className="mr-6 p-0">
             <Link
               className="flex items-center space-x-1"
