@@ -5,12 +5,13 @@ import { siteConfig } from "@/config/site";
 import Image from "next/image";
 import Link from "next/link";
 import boardImage from "@assets/img/board.svg";
+import { Input } from "@/components/ui/input";
 
 export default function Home() {
   return (
     <div className="">
       <Navbar />
-      <main className="container flex-1 py-6">
+      <main className="container flex-1">
         <div className="relative w-full items-center py-24 lg:py-36">
           <div className="relative m-auto flex-col items-start align-middle">
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-24">
@@ -86,7 +87,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="relative items-center justify-center py-12 text-center">
+        <div className="relative items-center justify-center py-14 text-center lg:py-24">
           <div className="mx-auto px-4 pb-12">
             <div className="mt-6 grid grid-cols-2 gap-0.5 md:grid-cols-4 lg:mt-8">
               <div className="col-span-1 flex justify-center px-8">
@@ -137,6 +138,152 @@ export default function Home() {
             <LucideIcon name="ArrowRight" className="ml-3 h-4 w-4" />
           </Button>
         </div>
+        <div className="relative mx-auto w-full max-w-7xl items-center py-14 lg:py-24">
+          <div className="mx-auto grid grid-cols-1 items-start lg:grid-cols-3">
+            <div className="lg:pr-12">
+              <div className="flex flex-col p-8 lg:p-0">
+                <h1 className="text-4xl text-primary">
+                  Always know
+                  <span className="lg:block"> what you’ll pay </span>
+                </h1>
+                <div className="mt-3 max-w-lg">
+                  <p className="text-sm text-muted-foreground">
+                    Choose a plan that works the best for you and your team.
+                    Start small, upgrade when you need to.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <section className="flex flex-col px-6 sm:px-8 lg:py-8">
+              <h3 className="mt-5 text-lg text-primary">Big fish</h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                For even the biggest enterprise companies.
+              </p>
+              <p className="order-first text-5xl font-light tracking-tight text-primary">
+                $99
+              </p>
+              <ul
+                role="list"
+                className="order-last mt-10 flex flex-col gap-y-3 text-sm text-muted-foreground"
+              >
+                <li className="flex items-center">
+                  <LucideIcon name="Check" className="h-4 w-4" />
+                  <span className="ml-4"> Connect unlimited websites </span>
+                </li>
+                <li className="flex items-center">
+                  <LucideIcon name="Check" className="h-4 w-4" />
+                  <span className="ml-4"> Connect up to 15 bank accounts </span>
+                </li>
+                <li className="flex items-center">
+                  <LucideIcon name="Check" className="h-4 w-4" />
+                  <span className="ml-4"> Track up to 200 credit cards </span>
+                </li>
+                <li className="flex items-center">
+                  <LucideIcon name="Check" className="h-4 w-4" />
+                  <span className="ml-4"> Analytics support </span>
+                </li>
+                <li className="flex items-center">
+                  <LucideIcon name="Check" className="h-4 w-4" />
+                  <span className="ml-4"> Export up to 24 months data </span>
+                </li>
+              </ul>
+              <Button className="mt-8">Get started</Button>
+            </section>
+            <section className="order-first flex flex-col rounded-xl bg-accent px-6 py-8 sm:px-8 lg:order-none">
+              <h3 className="mt-5 text-lg text-primary">Indie Hacker</h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Perfect for those leaving 9-5 and working 24/7.
+              </p>
+              <p className="order-first text-5xl font-light tracking-tight text-primary">
+                $29
+              </p>
+              <ul
+                role="list"
+                className="order-last mt-10 flex flex-col gap-y-3 text-sm text-muted-foreground"
+              >
+                <li className="flex items-center">
+                  <LucideIcon name="Check" className="h-4 w-4" />
+                  <span className="ml-4"> Connect 80 websites </span>
+                </li>
+                <li className="flex items-center">
+                  <LucideIcon name="Check" className="h-4 w-4" />
+                  <span className="ml-4"> Connect up to 5 bank accounts </span>
+                </li>
+                <li className="flex items-center">
+                  <LucideIcon name="Check" className="h-4 w-4" />
+                  <span className="ml-4"> Track up to 50 credit cards </span>
+                </li>
+                <li className="flex items-center">
+                  <LucideIcon name="Check" className="h-4 w-4" />
+                  <span className="ml-4"> Analytics support </span>
+                </li>
+                <li className="flex items-center">
+                  <LucideIcon name="Check" className="h-4 w-4" />
+                  <span className="ml-4"> Export up to 12 months data </span>
+                </li>
+                <li className="flex items-center">
+                  <LucideIcon name="Check" className="h-4 w-4" />
+                  <span className="ml-4"> Cloud service 24/7 </span>
+                </li>
+                <li className="flex items-center">
+                  <LucideIcon name="Check" className="h-4 w-4" />
+                  <span className="ml-4"> Track in multiple users </span>
+                </li>
+              </ul>
+              <Button className="mt-8">Get started</Button>
+            </section>
+          </div>
+        </div>
+        <div className="relative mx-auto w-full items-center py-14 lg:py-24">
+          <div className="mx-auto text-center lg:p-10">
+            <div>
+              <p className="text-5xl tracking-tight text-primary ">
+                Subscribe and get{" "}
+                <span className="lg:block">
+                  <span className="text-blue-500">benefits</span> from our
+                  newsletter
+                </span>
+              </p>
+              <p className="mt-4 text-lg tracking-tight text-muted-foreground">
+                If you could kick the person in the pants responsible for most
+                of your trouble, you wouldn&lsquo;t sit for a month. Imagine
+                that, fam.
+              </p>
+            </div>
+            <div className="mx-auto flex flex-col items-center pb-8 pt-8 md:pt-6">
+              <form
+                className="flexflex-col mx-auto items-center justify-center"
+                action=""
+              >
+                <div className="flex w-full items-center space-x-4">
+                  <Input type="email" placeholder="Email" />
+                  <Button type="submit">Subscribe</Button>
+                </div>
+              </form>
+            </div>
+            <div className="mx-auto sm:flex">
+              <p className="mx-auto text-xs text-muted-foreground">
+                By subscribing, you agree with GnussonNet&lsquo;s{" "}
+                <Button
+                  size={"sm"}
+                  variant={"link"}
+                  className="mx-0 px-0 text-xs"
+                >
+                  Terms of Service
+                </Button>{" "}
+                and{" "}
+                <Button
+                  size={"sm"}
+                  variant={"link"}
+                  className="mx-0 px-0 text-xs"
+                >
+                  Privacy Policy
+                </Button>
+                .
+              </p>
+            </div>
+          </div>
+        </div>
       </main>
 
       <footer className="w-full" aria-labelledby="footer-heading">
@@ -146,29 +293,29 @@ export default function Home() {
         <div className="py-12">
           <div className="flex flex-col items-baseline space-y-6">
             <div className="mx-auto">
-              <Link
-                href="/"
-                className="flex flex-shrink-0 items-center space-x-2 rounded-md ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-              >
-                <LucideIcon name="Globe" className="h-6 w-6 flex-shrink-0" />
-                <span className="inline-block font-bold">
-                  {siteConfig.name}{" "}
-                  <span className=" text-sm font-thin xs:inline">
-                    by GnussonNet
+              <Button asChild size={"sm"} variant={"link"} className="p-2">
+                <Link className="flex items-center space-x-2" href="/">
+                  <LucideIcon name="Globe" className="h-6 w-6 flex-shrink-0" />
+                  <span className="inline-block font-bold">
+                    {siteConfig.name}{" "}
+                    <span className=" text-sm font-thin xs:inline">
+                      by GnussonNet
+                    </span>
                   </span>
-                </span>
-              </Link>
+                </Link>
+              </Button>
             </div>
             <div className="mx-auto">
               <span className="mx-auto mt-2 text-sm text-muted-foreground">
                 Copyright © 2023
-                <Link
-                  href="https://gnusson.net"
-                  className="mx-2 text-blue-500 hover:text-muted-foreground"
-                  rel="noopener noreferrer"
+                <Button
+                  asChild
+                  size={"sm"}
+                  variant={"link"}
+                  className="mx-2 px-0"
                 >
-                  @GnussonNet
-                </Link>
+                  <Link href="https://gnusson.net">@GnussonNet</Link>
+                </Button>
               </span>
             </div>
           </div>
