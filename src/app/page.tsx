@@ -15,7 +15,7 @@ export default function Home() {
           <div className="relative m-auto flex-col items-start align-middle">
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-24">
               <div className="relative m-auto items-center gap-12 lg:inline-flex">
-                <div className="max-w-xl text-center lg:text-left">
+                <div className="max-w-3xl text-center lg:text-left">
                   <div>
                     <p className="text-3xl font-medium text-primary md:text-6xl">
                       Hub, the best way to{" "}
@@ -77,15 +77,10 @@ export default function Home() {
                 </div>
               </div>
               <div className="mt-12 block w-full lg:mt-0">
-                {/* <img
-                  alt="hero"
-                  className="mx-auto w-full rounded-2xl object-cover object-center drop-shadow-xl lg:ml-auto"
-                  src="https://leaddelta.com/wp-content/uploads/2022/12/home-hero.svg"
-                /> */}
                 <Image
                   src={boardImage}
                   alt="hero"
-                  className="mx-auto w-full rounded-2xl object-cover object-center drop-shadow-xl lg:ml-auto"
+                  className="mx-auto w-full max-w-2xl rounded-2xl object-cover object-center drop-shadow-xl lg:ml-auto"
                 />
               </div>
             </div>
