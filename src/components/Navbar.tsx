@@ -76,108 +76,110 @@ const Navbar = () => {
   return (
     <header
       className={cn(
-        "container sticky top-0 z-40 flex w-full flex-wrap items-center overflow-hidden border-b bg-background",
+        "sticky top-0 z-40 w-full overflow-hidden border-b bg-background",
         menuOpen ? "" : HEADER_HEIGHT
       )}
     >
-      <Link
-        ref={navLogoRef}
-        href={pathname.startsWith("/dashboard") ? "/dashboard" : "/"}
-        className={cn(
-          "mr-6 flex flex-shrink-0 items-center space-x-2 rounded-md ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-          HEADER_HEIGHT
-        )}
-      >
-        <LucideIcon name="Globe" className="h-6 w-6 flex-shrink-0" />
-        <span className="inline-block font-bold">
-          {siteConfig.name}{" "}
-          <span className=" text-sm font-thin xs:inline">by GnussonNet</span>
-        </span>
-      </Link>
-      <Button
-        ref={navMenuButtonRef}
-        onClick={() => setMenuOpen(!menuOpen)}
-        size={"sm"}
-        variant={"outline"}
-        className={cn("ml-auto", navItemsWrapped.links ? "block" : "hidden")}
-      >
-        <LucideIcon name="Menu" className="h-4 w-4" />
-      </Button>
-      <div ref={navPlaceholderRef}></div>
-      <div
-        ref={navItemsRef}
-        className={cn(
-          "relative flex items-center",
-          menuOpen ? "mb-4 w-full" : "flex-1",
-          !menuOpen && HEADER_HEIGHT
-        )}
-      >
-        <NavItems
-          menuOpen={menuOpen}
-          items={
-            pathname === "/" ? siteConfig.landingNav : siteConfig.dashboardNav
-          }
-        />
-      </div>
-      <Separator className={cn(menuOpen ? "block" : "hidden")} />
-      <div
-        ref={navButtonsRef}
-        className={cn(
-          "relative flex items-center space-x-4",
-          menuOpen ? "my-4 flex-1 justify-center" : "justify-end"
-        )}
-      >
-        <nav className={cn("flex gap-2", menuOpen ? "w-full flex-col" : "")}>
-          {!SIMULATED_AUTH && !pathname.startsWith("/dashboard") ? (
-            <>
-              <Button
-                size={menuOpen ? "lg" : "sm"}
-                variant={"ghost"}
-                className="flex flex-shrink-0 justify-start"
-                asChild
-              >
-                <Link href={siteConfig.unauthenticatedNav.signUp.href}>
-                  <LucideIcon
-                    name={siteConfig.unauthenticatedNav.signUp.icon}
-                    className="mr-2 h-4 w-4"
-                  />
-                  {siteConfig.unauthenticatedNav.signUp.title}
-                </Link>
-              </Button>
-              <Button
-                size={menuOpen ? "lg" : "sm"}
-                className="flex flex-shrink-0 justify-start"
-                asChild
-              >
-                <Link href={siteConfig.unauthenticatedNav.signIn.href}>
-                  <LucideIcon
-                    name={siteConfig.unauthenticatedNav.signIn.icon}
-                    className="mr-2 h-4 w-4"
-                  />
-                  {siteConfig.unauthenticatedNav.signIn.title}
-                </Link>
-              </Button>
-            </>
-          ) : SIMULATED_AUTH && !pathname.startsWith("/dashboard") ? (
-            <>
-              <Button
-                size={menuOpen ? "lg" : "sm"}
-                className="flex justify-start"
-                asChild
-              >
-                <Link href={siteConfig.authenticatedNav.dashboard.href}>
-                  <LucideIcon
-                    name={siteConfig.authenticatedNav.dashboard.icon}
-                    className="mr-2 h-4 w-4"
-                  />
-                  {siteConfig.authenticatedNav.dashboard.title}
-                </Link>
-              </Button>
-            </>
-          ) : (
-            <></>
+      <div className="container flex w-full flex-wrap items-center">
+        <Link
+          ref={navLogoRef}
+          href={pathname.startsWith("/dashboard") ? "/dashboard" : "/"}
+          className={cn(
+            "mr-6 flex flex-shrink-0 items-center space-x-2 rounded-md ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+            HEADER_HEIGHT
           )}
-        </nav>
+        >
+          <LucideIcon name="Globe" className="h-6 w-6 flex-shrink-0" />
+          <span className="inline-block font-bold">
+            {siteConfig.name}{" "}
+            <span className=" text-sm font-thin xs:inline">by GnussonNet</span>
+          </span>
+        </Link>
+        <Button
+          ref={navMenuButtonRef}
+          onClick={() => setMenuOpen(!menuOpen)}
+          size={"sm"}
+          variant={"outline"}
+          className={cn("ml-auto", navItemsWrapped.links ? "block" : "hidden")}
+        >
+          <LucideIcon name="Menu" className="h-4 w-4" />
+        </Button>
+        <div ref={navPlaceholderRef}></div>
+        <div
+          ref={navItemsRef}
+          className={cn(
+            "relative flex items-center",
+            menuOpen ? "mb-4 w-full" : "flex-1",
+            !menuOpen && HEADER_HEIGHT
+          )}
+        >
+          <NavItems
+            menuOpen={menuOpen}
+            items={
+              pathname === "/" ? siteConfig.landingNav : siteConfig.dashboardNav
+            }
+          />
+        </div>
+        <Separator className={cn(menuOpen ? "block" : "hidden")} />
+        <div
+          ref={navButtonsRef}
+          className={cn(
+            "relative flex items-center space-x-4",
+            menuOpen ? "my-4 flex-1 justify-center" : "justify-end"
+          )}
+        >
+          <nav className={cn("flex gap-2", menuOpen ? "w-full flex-col" : "")}>
+            {!SIMULATED_AUTH && !pathname.startsWith("/dashboard") ? (
+              <>
+                <Button
+                  size={menuOpen ? "lg" : "sm"}
+                  variant={"ghost"}
+                  className="flex flex-shrink-0 justify-start"
+                  asChild
+                >
+                  <Link href={siteConfig.unauthenticatedNav.signUp.href}>
+                    <LucideIcon
+                      name={siteConfig.unauthenticatedNav.signUp.icon}
+                      className="mr-2 h-4 w-4"
+                    />
+                    {siteConfig.unauthenticatedNav.signUp.title}
+                  </Link>
+                </Button>
+                <Button
+                  size={menuOpen ? "lg" : "sm"}
+                  className="flex flex-shrink-0 justify-start"
+                  asChild
+                >
+                  <Link href={siteConfig.unauthenticatedNav.signIn.href}>
+                    <LucideIcon
+                      name={siteConfig.unauthenticatedNav.signIn.icon}
+                      className="mr-2 h-4 w-4"
+                    />
+                    {siteConfig.unauthenticatedNav.signIn.title}
+                  </Link>
+                </Button>
+              </>
+            ) : SIMULATED_AUTH && !pathname.startsWith("/dashboard") ? (
+              <>
+                <Button
+                  size={menuOpen ? "lg" : "sm"}
+                  className="flex justify-start"
+                  asChild
+                >
+                  <Link href={siteConfig.authenticatedNav.dashboard.href}>
+                    <LucideIcon
+                      name={siteConfig.authenticatedNav.dashboard.icon}
+                      className="mr-2 h-4 w-4"
+                    />
+                    {siteConfig.authenticatedNav.dashboard.title}
+                  </Link>
+                </Button>
+              </>
+            ) : (
+              <></>
+            )}
+          </nav>
+        </div>
       </div>
     </header>
   );
