@@ -154,7 +154,7 @@ const page = () => {
             <p className="mt-2 text-sm text-muted-foreground">
               For even the biggest enterprise companies.
             </p>
-            <p className="order-first text-5xl font-light tracking-tight text-primary">
+            <p className="order-first text-3xl font-light tracking-tight text-primary md:text-5xl">
               $99
             </p>
             <ul
