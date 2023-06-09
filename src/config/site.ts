@@ -11,7 +11,7 @@ export const siteConfig = {
   options: {
     navbar: {
       height: "h-16",
-      padding: "p-16",
+      padding: "pt-16",
     },
   },
   landingNav: [
