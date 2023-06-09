@@ -149,7 +149,9 @@ const Navbar = ({ items }: { items: NavItem[] }) => {
           ref={navMenuButtonRef}
           className={cn(
             "ml-auto flex items-center",
-            navItemsWrapped.buttons ? "opacity-1" : "opacity-0",
+            navItemsWrapped.buttons
+              ? "opacity-1 pointer-events-auto"
+              : "pointer-events-none opacity-0",
 
             menuOpen
               ? "order-2"
