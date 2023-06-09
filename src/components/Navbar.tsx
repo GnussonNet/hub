@@ -12,7 +12,7 @@ import { Separator } from "./ui/separator";
 import { NavItem } from "@/types/nav";
 
 // FIXME Remove this when auth is implemented
-const SIMULATED_AUTH = true;
+const SIMULATED_AUTH = false;
 const HEADER_HEIGHT = "h-16";
 
 const Navbar = ({ items }: { items: NavItem[] }) => {
