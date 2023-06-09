@@ -14,12 +14,12 @@ const page = () => {
             <div className="relative m-auto items-center gap-12 lg:inline-flex">
               <div className="max-w-3xl text-center lg:text-left">
                 <div>
-                  <p className="text-3xl font-medium text-primary md:text-6xl">
+                  <p className="text-3xl font-medium tracking-tight text-primary md:text-5xl ">
                     Hub, the best way to{" "}
                     <span className="text-blue-500">enchance</span> workflow
                     between teams.
                   </p>
-                  <p className="mt-4 text-lg tracking-tight text-muted-foreground lg:text-xl">
+                  <p className="mt-4 text-lg tracking-tight text-muted-foreground md:text-xl">
                     To better understand each other, we need to communicate. Hub
                     is a platfor to help you and your team to communicate
                     better. With Hub you can create boards, add cards,
@@ -114,14 +114,13 @@ const page = () => {
             </div>
           </div>
         </div>
-
-        <div className="grid grid-cols-1 gap-12 text-center lg:grid-cols-2 lg:gap-24">
-          <p className="text-muted-foreground md:mt-5">
+        <div className="grid grid-cols-1 gap-6 text-center lg:grid-cols-2 lg:gap-24">
+          <p className="mt-4 text-lg tracking-tight text-muted-foreground md:text-xl">
             Responding to floods and weather caused by climate change,
             Florida-based Brillhart Architecture has raised a residence in
             southern Miami on galvanized steel stilts.
           </p>
-          <p className="text-muted-foreground md:mt-5">
+          <p className="mt-4 text-lg tracking-tight text-muted-foreground md:text-xl">
             Responding to floods and weather caused by climate change,
             Florida-based Brillhart Architecture has raised a residence in
             southern Miami on galvanized steel stilts.
@@ -136,12 +135,12 @@ const page = () => {
         <div className="mx-auto grid grid-cols-1 items-start lg:grid-cols-3">
           <div className="lg:pr-12">
             <div className="flex flex-col p-8 lg:p-0">
-              <h1 className="text-4xl text-primary">
+              <h1 className="text-3xl tracking-tight text-primary md:text-5xl ">
                 Always know
                 <span className="lg:block"> what you’ll pay </span>
               </h1>
               <div className="mt-3 max-w-lg">
-                <p className="text-sm text-muted-foreground">
+                <p className="mt-4 text-lg tracking-tight text-muted-foreground md:text-xl">
                   Choose a plan that works the best for you and your team. Start
                   small, upgrade when you need to.
                 </p>
@@ -149,7 +148,9 @@ const page = () => {
             </div>
           </div>
           <section className="flex flex-col px-6 sm:px-8 lg:py-8">
-            <h2 className="mt-5 text-lg text-primary">Big fish</h2>
+            <h2 className="text-muted-primary mt-4 text-lg tracking-tight md:text-xl">
+              Big fish
+            </h2>
             <p className="mt-2 text-sm text-muted-foreground">
               For even the biggest enterprise companies.
             </p>
@@ -184,11 +185,13 @@ const page = () => {
             <Button className="mt-8">Get started</Button>
           </section>
           <section className="order-first flex flex-col rounded-xl bg-accent px-6 py-8 sm:px-8 lg:order-none">
-            <h3 className="mt-5 text-lg text-primary">Indie Hacker</h3>
+            <h3 className="mt-4 text-lg tracking-tight text-primary md:text-xl">
+              Indie Hacker
+            </h3>
             <p className="mt-2 text-sm text-white/60">
               Perfect for those leaving 9-5 and working 24/7.
             </p>
-            <p className="order-first text-5xl font-light tracking-tight text-primary">
+            <p className="order-first text-3xl font-light tracking-tight text-primary md:text-5xl">
               $29
             </p>
             <ul
@@ -231,14 +234,14 @@ const page = () => {
       <div className="relative mx-auto w-full items-center py-14 lg:py-24">
         <div className="mx-auto text-center lg:p-10">
           <div>
-            <p className="text-5xl tracking-tight text-primary ">
+            <p className="text-3xl tracking-tight text-primary md:text-5xl ">
               Subscribe and get{" "}
               <span className="lg:block">
                 <span className="text-blue-500">benefits</span> from our
                 newsletter
               </span>
             </p>
-            <p className="mt-4 text-lg tracking-tight text-muted-foreground">
+            <p className="mt-4 text-lg tracking-tight text-muted-foreground md:text-xl">
               If you could kick the person in the pants responsible for most of
               your trouble, you wouldn&lsquo;t sit for a month. Imagine that,
               fam.

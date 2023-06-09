@@ -1,15 +1,22 @@
 import Link from "next/link";
 import { UserAuthForm } from "./components/UserAuthForm";
+import { cn } from "@/lib/utils";
+import { siteConfig } from "@/config/site";
 
 const page = () => {
   return (
-    <div className="container pt-8">
-      <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:h-full sm:max-w-sm">
+    <div
+      className={cn(
+        "container pt-8 sm:pt-12",
+        siteConfig.options.navbar.paddingBottom
+      )}
+    >
+      <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:h-full sm:max-w-xl">
         <div className="flex flex-col space-y-2 text-center">
-          <h1 className="text-2xl font-semibold tracking-tight">
+          <h1 className="text-2xl font-medium tracking-tight text-primary md:text-3xl">
             Sign in to your account
           </h1>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-md mt-4 tracking-tight text-muted-foreground md:text-lg">
             Enter your email and password below to sign in
           </p>
         </div>
