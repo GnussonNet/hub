@@ -18,10 +18,7 @@ export default function RootLayout({
     <>
       <Navbar items={siteConfig.landingNav} />
       <main
-        className={cn(
-          "min-h-screen flex-1",
-          `pt-${siteConfig.options.headerHeight}`
-        )}
+        className={cn("min-h-screen flex-1", siteConfig.options.navbar.padding)}
       >
         {children}
       </main>

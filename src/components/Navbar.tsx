@@ -105,7 +105,7 @@ const Navbar = ({ items }: { items: NavItem[] }) => {
       ref={navRef}
       className={cn(
         "fixed top-0 z-40 w-full overflow-hidden border-b bg-background",
-        menuOpen ? "" : `h-${siteConfig.options.headerHeight}`
+        menuOpen ? "" : siteConfig.options.navbar.height
       )}
     >
       <div className="container flex w-full flex-wrap items-center">
@@ -113,7 +113,7 @@ const Navbar = ({ items }: { items: NavItem[] }) => {
           ref={navLogoRef}
           className={cn(
             "order-1 flex items-center",
-            `h-${siteConfig.options.headerHeight}`
+            siteConfig.options.navbar.height
           )}
         >
           <Button asChild size={"sm"} variant={"link"} className="mr-6 p-0">
@@ -136,7 +136,7 @@ const Navbar = ({ items }: { items: NavItem[] }) => {
           className={cn(
             "relative flex items-center",
             menuOpen ? "w-full" : "flex-1",
-            !menuOpen && `h-${siteConfig.options.headerHeight}`,
+            !menuOpen && siteConfig.options.navbar.height,
             navItemsWrapped.menuButton ? "order-5" : "order-3"
           )}
         >
@@ -156,7 +156,7 @@ const Navbar = ({ items }: { items: NavItem[] }) => {
               : navItemsWrapped.menuButton
               ? "order-3"
               : "order-5",
-            `h-${siteConfig.options.headerHeight}`
+            siteConfig.options.navbar.height
           )}
         >
           {menuOpen ? (
@@ -184,7 +184,7 @@ const Navbar = ({ items }: { items: NavItem[] }) => {
           className={cn(
             "relative order-5 flex items-center space-x-4",
             menuOpen ? "mb-4 flex-1 justify-center" : "justify-end",
-            !menuOpen && `h-${siteConfig.options.headerHeight}`
+            !menuOpen && siteConfig.options.navbar.height
           )}
         >
           <nav className={cn("flex gap-2", menuOpen ? "w-full flex-col" : "")}>

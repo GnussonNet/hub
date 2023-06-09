@@ -9,7 +9,10 @@ export const siteConfig = {
   name: "Hub",
   description: "Hub is a place for clients to get informed and notified about the process.",
   options: {
-    headerHeight: "16"
+    navbar: {
+      height: "h-16",
+      padding: "p-16",
+    },
   },
   landingNav: [
     {
