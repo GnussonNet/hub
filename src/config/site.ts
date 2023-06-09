@@ -8,6 +8,9 @@ export const siteConfig = {
   title: "Hub",
   name: "Hub",
   description: "Hub is a place for clients to get informed and notified about the process.",
+  options: {
+    headerHeight: "16"
+  },
   landingNav: [
     {
       title: "Home",

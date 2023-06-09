@@ -2,6 +2,7 @@ import "@styles/globals.css";
 import { siteConfig } from "@config/site";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { cn } from "@/lib/utils";
 
 export const metadata = {
   title: siteConfig.title,
@@ -16,7 +17,14 @@ export default function RootLayout({
   return (
     <>
       <Navbar items={siteConfig.dashboardNav} />
-      <main className="container flex-1">{children}</main>
+      <main
+        className={cn(
+          "min-h-screen flex-1",
+          `pt-${siteConfig.options.headerHeight}`
+        )}
+      >
+        {children}
+      </main>
       <Footer />
     </>
   );

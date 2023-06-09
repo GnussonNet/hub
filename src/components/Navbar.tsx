@@ -13,7 +13,6 @@ import { NavItem } from "@/types/nav";
 
 // FIXME Remove this when auth is implemented
 const SIMULATED_AUTH = false;
-const HEADER_HEIGHT = "h-16";
 
 const Navbar = ({ items }: { items: NavItem[] }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -99,14 +98,17 @@ const Navbar = ({ items }: { items: NavItem[] }) => {
     <header
       ref={navRef}
       className={cn(
-        "sticky top-0 z-40 w-full overflow-hidden border-b bg-background",
-        menuOpen ? "" : HEADER_HEIGHT
+        "fixed top-0 z-40 w-full overflow-hidden border-b bg-background",
+        menuOpen ? "" : `h-${siteConfig.options.headerHeight}`
       )}
     >
       <div className="container flex w-full flex-wrap items-center">
         <div
           ref={navLogoRef}
-          className={cn("order-1 flex items-center", HEADER_HEIGHT)}
+          className={cn(
+            "order-1 flex items-center",
+            `h-${siteConfig.options.headerHeight}`
+          )}
         >
           <Button asChild size={"sm"} variant={"link"} className="mr-6 p-0">
             <Link
@@ -128,7 +130,7 @@ const Navbar = ({ items }: { items: NavItem[] }) => {
           className={cn(
             "relative flex items-center",
             menuOpen ? "w-full" : "flex-1",
-            !menuOpen && HEADER_HEIGHT,
+            !menuOpen && `h-${siteConfig.options.headerHeight}`,
             navItemsWrapped.menuButton ? "order-5" : "order-3"
           )}
         >
@@ -148,7 +150,7 @@ const Navbar = ({ items }: { items: NavItem[] }) => {
               : navItemsWrapped.menuButton
               ? "order-3"
               : "order-5",
-            HEADER_HEIGHT
+            `h-${siteConfig.options.headerHeight}`
           )}
         >
           {menuOpen ? (
@@ -176,7 +178,7 @@ const Navbar = ({ items }: { items: NavItem[] }) => {
           className={cn(
             "relative order-5 flex items-center space-x-4",
             menuOpen ? "mb-4 flex-1 justify-center" : "justify-end",
-            !menuOpen && HEADER_HEIGHT
+            !menuOpen && `h-${siteConfig.options.headerHeight}`
           )}
         >
           <nav className={cn("flex gap-2", menuOpen ? "w-full flex-col" : "")}>
