@@ -3,10 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import boardImage from "@assets/img/board.svg";
 import Image from "next/image";
+import Link from "next/link";
 
 const page = () => {
   return (
-    <>
+    <div className="container">
       <div className="relative w-full items-center py-24 lg:py-36">
         <div className="relative m-auto flex-col items-start align-middle">
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-24">
@@ -255,30 +256,28 @@ const page = () => {
             </form>
           </div>
           <div className="mx-auto sm:flex">
-            <p className="mx-auto text-xs text-muted-foreground">
-              By subscribing, you agree with GnussonNet&lsquo;s{" "}
-              <Button
-                size={"sm"}
-                variant={"link"}
-                className="mx-0 px-0 text-xs"
+            <p className="mx-auto px-8 text-center text-sm text-muted-foreground">
+              By clicking continue, you agree to our{" "}
+              <Link
+                href="/terms"
+                className="underline underline-offset-4 hover:text-primary"
               >
                 Terms of Service
-              </Button>{" "}
+              </Link>{" "}
               and{" "}
-              <Button
-                size={"sm"}
-                variant={"link"}
-                className="mx-0 px-0 text-xs"
+              <Link
+                href="/privacy"
+                className="underline underline-offset-4 hover:text-primary"
               >
                 Privacy Policy
-              </Button>
+              </Link>
               .
             </p>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
-}
+};
 
 export default page;
