@@ -1,20 +1,21 @@
 "use client";
 
 import { siteConfig } from "@/config/site";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 import LucideIcon from "./LucideIcon";
 import { NavItems } from "./NavItems";
 import { Button } from "./ui/button";
-import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
-import { cn } from "@/lib/utils";
 import { Separator } from "./ui/separator";
+import { NavItem } from "@/types/nav";
 
 // FIXME Remove this when auth is implemented
-const SIMULATED_AUTH = false;
+const SIMULATED_AUTH = true;
 const HEADER_HEIGHT = "h-16";
 
-const Navbar = () => {
+const Navbar = ({ items }: { items: NavItem[] }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
   const [navItemsWrapped, setNavItemsWrapped] = useState({
@@ -131,14 +132,7 @@ const Navbar = () => {
             navItemsWrapped.menuButton ? "order-5" : "order-3"
           )}
         >
-          <NavItems
-            menuOpen={menuOpen}
-            items={
-              pathname === "/dashboard"
-                ? siteConfig.dashboardNav
-                : siteConfig.landingNav
-            }
-          />
+          <NavItems menuOpen={menuOpen} items={items} />
         </div>
         <Separator
           className={cn("order-5", menuOpen ? "my-4 block" : "hidden")}

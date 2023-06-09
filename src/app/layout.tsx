@@ -1,6 +1,5 @@
 import "@styles/globals.css";
 import { siteConfig } from "@config/site";
-import Navbar from "@/components/Navbar";
 
 export const metadata = {
   title: siteConfig.title,
@@ -14,13 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="dark">
-        {children}
-        {/* <div className="flex flex-col">
-          <Navbar />
-          <main className="container py-6 flex-1">{children}</main>
-        </div> */}
-      </body>
+      <body className="dark">{children}</body>
     </html>
   );
 }

@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <>
-      <Navbar items={siteConfig.dashboardNav} />
+      <Navbar items={siteConfig.landingNav} />
       <main className="container flex-1">{children}</main>
       <Footer />
     </>
