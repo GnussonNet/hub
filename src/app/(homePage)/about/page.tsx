@@ -1,6 +1,6 @@
 const page = () => {
   return (
-    <div className="container">
+    <div className="container pt-8 sm:pt-12">
       <h1>About</h1>
     </div>
   );

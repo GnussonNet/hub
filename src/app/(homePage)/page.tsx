@@ -7,8 +7,8 @@ import Link from "next/link";
 
 const page = () => {
   return (
-    <div className="container">
-      <div className="relative w-full items-center py-24 lg:py-36">
+    <div className="container pt-8 sm:pt-12">
+      <div className="relative w-full items-center pb-14 lg:pb-24">
         <div className="relative m-auto flex-col items-start align-middle">
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-24">
             <div className="relative m-auto items-center gap-12 lg:inline-flex">
