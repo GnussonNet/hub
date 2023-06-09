@@ -155,7 +155,7 @@ export default function Home() {
               </div>
             </div>
             <section className="flex flex-col px-6 sm:px-8 lg:py-8">
-              <h3 className="mt-5 text-lg text-primary">Big fish</h3>
+              <h2 className="mt-5 text-lg text-primary">Big fish</h2>
               <p className="mt-2 text-sm text-muted-foreground">
                 For even the biggest enterprise companies.
               </p>
@@ -191,7 +191,7 @@ export default function Home() {
             </section>
             <section className="order-first flex flex-col rounded-xl bg-accent px-6 py-8 sm:px-8 lg:order-none">
               <h3 className="mt-5 text-lg text-primary">Indie Hacker</h3>
-              <p className="mt-2 text-sm text-muted-foreground">
+              <p className="mt-2 text-sm text-white/60">
                 Perfect for those leaving 9-5 and working 24/7.
               </p>
               <p className="order-first text-5xl font-light tracking-tight text-primary">
@@ -199,7 +199,7 @@ export default function Home() {
               </p>
               <ul
                 role="list"
-                className="order-last mt-10 flex flex-col gap-y-3 text-sm text-muted-foreground"
+                className="order-last mt-10 flex flex-col gap-y-3 text-sm text-white/60"
               >
                 <li className="flex items-center">
                   <LucideIcon name="Check" className="h-4 w-4" />

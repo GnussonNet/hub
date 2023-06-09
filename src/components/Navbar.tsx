@@ -160,6 +160,7 @@ const Navbar = () => {
               onClick={() => setMenuOpen(false)}
               size={"sm"}
               variant={"outline"}
+              aria-label="Close menu"
             >
               <LucideIcon name="X" className="h-4 w-4" />
             </Button>
@@ -168,6 +169,7 @@ const Navbar = () => {
               onClick={() => setMenuOpen(true)}
               size={"sm"}
               variant={"outline"}
+              aria-label="Open menu"
             >
               <LucideIcon name="Menu" className="h-4 w-4" />
             </Button>
