@@ -134,7 +134,9 @@ const Navbar = () => {
           <NavItems
             menuOpen={menuOpen}
             items={
-              pathname === "/" ? siteConfig.landingNav : siteConfig.dashboardNav
+              pathname === "/dashboard"
+                ? siteConfig.dashboardNav
+                : siteConfig.landingNav
             }
           />
         </div>
