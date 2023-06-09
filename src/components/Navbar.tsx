@@ -75,6 +75,12 @@ const Navbar = ({ items }: { items: NavItem[] }) => {
   }, []);
 
   useEffect(() => {
+    if (menuOpen) {
+      setMenuOpen(false);
+    }
+  }, [pathname]);
+
+  useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
         menuOpen &&
