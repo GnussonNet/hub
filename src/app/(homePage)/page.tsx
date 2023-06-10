@@ -85,29 +85,37 @@ const page = () => {
         <div className="mx-auto px-4 pb-12">
           <div className="mt-6 grid grid-cols-2 gap-0.5 md:grid-cols-4 lg:mt-8">
             <div className="col-span-1 flex justify-center px-8">
-              <img
+              <Image
                 className="max-h-12"
+                width={200}
+                height={200}
                 src="https://d33wubrfki0l68.cloudfront.net/2a4d2cdd794587314ad2034778712608ac32e37c/79f3b/images/logos/8.svg"
                 alt="logo"
               />
             </div>
             <div className="col-span-1 flex justify-center px-8">
-              <img
+              <Image
                 className="max-h-12"
+                width={200}
+                height={200}
                 src="https://d33wubrfki0l68.cloudfront.net/4dc5df63255f9f0c1f54c804dd3149cf11308507/b7a70/images/logos/3.svg"
                 alt="logo"
               />
             </div>
             <div className="col-span-1 flex justify-center px-8">
-              <img
+              <Image
                 className="max-h-12"
+                width={200}
+                height={200}
                 src="https://d33wubrfki0l68.cloudfront.net/456c999508e76cd199714cfa4fad3826ebb02216/9147b/images/logos/5.svg"
                 alt="logo"
               />
             </div>
             <div className="col-span-1 flex justify-center px-8">
-              <img
+              <Image
                 className="max-h-12"
+                width={200}
+                height={200}
                 src="https://d33wubrfki0l68.cloudfront.net/b5d09ea7476a226d10dd1235e071288761e51da7/e68ac/images/logos/6.svg"
                 alt="logo"
               />
@@ -171,7 +179,7 @@ const page = () => {
               </li>
               <li className="flex items-center">
                 <LucideIcon name="Check" className="h-4 w-4" />
-                <span className="ml-4"> Track up to 200 credit cards </span>
+                <span className="ml-4"> Track up to 50 credit cards </span>
               </li>
               <li className="flex items-center">
                 <LucideIcon name="Check" className="h-4 w-4" />
@@ -208,7 +216,7 @@ const page = () => {
               </li>
               <li className="flex items-center">
                 <LucideIcon name="Check" className="h-4 w-4" />
-                <span className="ml-4"> Track up to 50 credit cards </span>
+                <span className="ml-4"> Track up to 200 credit cards </span>
               </li>
               <li className="flex items-center">
                 <LucideIcon name="Check" className="h-4 w-4" />
