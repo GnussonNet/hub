@@ -159,7 +159,7 @@ const page = () => {
             <h2 className="text-muted-primary mt-4 text-lg tracking-tight md:text-xl">
               Big fish
             </h2>
-            <p className="mt-2 text-sm text-muted-foreground">
+            <p className="mt-2 text-muted-foreground">
               For even the biggest enterprise companies.
             </p>
             <p className="order-first text-3xl font-light tracking-tight text-primary md:text-5xl">
@@ -167,7 +167,7 @@ const page = () => {
             </p>
             <ul
               role="list"
-              className="order-last mt-10 flex flex-col gap-y-3 text-sm text-muted-foreground"
+              className="order-last mt-10 flex flex-col gap-y-3 text-muted-foreground"
             >
               <li className="flex items-center">
                 <LucideIcon name="Check" className="h-4 w-4" />
@@ -196,7 +196,7 @@ const page = () => {
             <h3 className="mt-4 text-lg tracking-tight text-primary md:text-xl">
               Indie Hacker
             </h3>
-            <p className="mt-2 text-sm text-white/60">
+            <p className="mt-2 text-white/60">
               Perfect for those leaving 9-5 and working 24/7.
             </p>
             <p className="order-first text-3xl font-light tracking-tight text-primary md:text-5xl">
@@ -204,7 +204,7 @@ const page = () => {
             </p>
             <ul
               role="list"
-              className="order-last mt-10 flex flex-col gap-y-3 text-sm text-white/60"
+              className="order-last mt-10 flex flex-col gap-y-3 text-white/60"
             >
               <li className="flex items-center">
                 <LucideIcon name="Check" className="h-4 w-4" />
@@ -267,7 +267,7 @@ const page = () => {
             </form>
           </div>
           <div className="mx-auto sm:flex">
-            <p className="mx-auto px-8 text-center text-sm text-muted-foreground">
+            <p className="mx-auto px-8 text-center text-muted-foreground">
               By clicking continue, you agree to our{" "}
               <Link
                 href="/terms"

@@ -11,7 +11,7 @@ const page = () => {
         siteConfig.options.navbar.paddingBottom
       )}
     >
-      <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:h-full sm:max-w-xl">
+      <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:h-full sm:max-w-lg">
         <div className="flex flex-col space-y-2 text-center">
           <h1 className="text-2xl font-medium tracking-tight text-primary md:text-3xl">
             Sign in to your account
@@ -21,7 +21,7 @@ const page = () => {
           </p>
         </div>
         <UserAuthForm />
-        <p className="px-8 text-center text-sm text-muted-foreground">
+        <p className="px-8 text-center text-muted-foreground">
           By clicking continue, you agree to our{" "}
           <Link
             href="/terms"
